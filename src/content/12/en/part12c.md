@@ -561,7 +561,7 @@ services:
       - app // highlight-line
 ```
 
-If we do not enforce the starting order with <i>depends\_on</i> there a risk that Nginx fails on startup since it tries to resolve all DNS names that are referred in the config file:
+If we do not enforce the starting order with <i>depends\_on</i> there is a risk that Nginx fails on startup since it tries to resolve all DNS names that are referred in the config file:
 
 ```bash
 http {
@@ -579,7 +579,7 @@ http {
 }
 ```
 
- Note that <i>depends\_on</i> does not guarantee that the service in the depended container is ready for action, it just ensures that the container has been started (and the corresponding entry is added to DNS). If a service needs to wait another service to become ready before the startup, [other solutions](https://docs.docker.com/compose/startup-order/) should be used.
+ Note that <i>depends\_on</i> does not guarantee that the service in the depended container is ready for action, it just ensures that the container has been started (and the corresponding entry is added to the DNS). If a service needs to wait another service to become ready before the startup, [other solutions](https://docs.docker.com/compose/startup-order/) should be used.
 
 </div>
 
